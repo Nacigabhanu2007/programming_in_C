@@ -1,0 +1,200 @@
+#include<stdio.h>
+int main()
+{
+        int num;
+        printf("enter the num");
+        scanf("%d",&num);
+        if(num%5==0 && num%2!=0)
+        {
+                printf("num is divisible by 5 and not a even number");
+        }
+        else if(num%5==0 && num%2==0)
+        {
+                printf("num is divisible by 5 and a even number");
+        }
+        else if(num%5!=0 && num%2==0)
+        {
+                printf("num is not  divisible by 5 and a even number");
+        }
+        else if(num%5!=0 && num%2!=0)
+        {
+                printf("num is not divisible by 5 and not a even number");
+        }
+        else
+        {
+                printf("invalid number");
+        }
+        printf("\nfinished");
+        return 0;
+}
+
+#include<stdio.h>
+int main()
+{
+        int A,B,C;
+        printf("enter A,B,C");
+        scanf("%d%d%d",&A,&B,&C);
+        if(A>B && A>C)
+        {
+                printf("A is greater");
+        }
+        else if(B>C)
+        {
+                printf("B is greater");
+        }
+        else
+        {
+                printf("C is greater");
+        }
+        printf("\nfinished\n");
+        return 0;
+}
+#include<stdio.h>
+int main()
+{
+        int num;
+        printf("enter the num");
+        scanf("%d",&num);
+        if(num%2==0)
+        {
+                printf("even number");
+        }
+        else
+        {
+                printf("odd number");
+        }
+        printf("\n finished\n");
+        return 0;
+}
+#include<stdio.h>
+int main()
+{
+        int marks,A;
+        A=marks;
+        printf("enter the value of A");
+        scanf("%d",&A);
+        if(A>=91 && A<=100)
+        {
+                printf("grade o");
+        }
+        else if(A>=81 && A<=90)
+        {
+                printf("grade A+");
+        }
+        else if(A>=71 && A<=80)
+        {
+                printf("greade A");
+        }
+        else if(A>=61 && A<=70)
+        {
+                printf("grade B+");
+        }
+        else if(A>=51 && A<=60)
+        {
+                printf("grade B");
+        }
+        else if(A<50)
+        {
+                printf("grade RA");
+        }
+        else
+        {
+                printf("invalid marks");
+        }
+        printf("\n finished\n");
+        return 0;
+}
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+        int a,b,c,D;
+        double R1,R2,y;
+        D=(b*b)-4*a*c;
+        printf("enter a,b,c");
+        scanf("%d%d%d",&a,&b,&c);
+        if(D==0)
+        {
+                R1=-b/2*a;
+                R2=-b/2*a;
+                printf("The roots are:%lf%lf",R1,R2);
+        }
+        else if(D>0)
+        {
+                y=pow(D,1/2);
+                R1=(-b+y)/2*a;
+                R2=(-b-y)/2*a;
+                printf("The roots are:%lf%lf",R1,R2);
+        }
+        else
+        {
+                printf("The roots are imaginary");
+        }
+        printf("\n finished/n");
+        return 0;
+}
+#include<stdio.h>
+int main()
+{
+        int units, bill;
+        printf("enter the units");
+        scanf("%d",&units);
+        if(units<101 && units>0)
+        {
+                printf("no charge");
+                bill=0;
+        }
+        else if(units<201)
+        {
+                bill=(units-100)*5;
+        }
+        else if(units>200)
+        {
+                bill=(units-200)*10+(100*5);
+        }
+        else
+        {
+                printf("invalid units");
+        }
+        printf("Amount:%d",bill);
+        return 0;
+}
+
+#include<stdio.h>
+int main()
+{
+        int choice,a,b;
+        printf("1-addition \n");
+        printf("2-subtraction \n");
+        printf("3-multiplication \n");
+        printf("4-division \n");
+        printf("5-modulo \n");
+        printf("enter the choice");
+        scanf("%d",&choice);
+        printf("enter a,b");
+        scanf("%d%d",&a,&b);
+        switch(choice)
+        {
+                case 1:
+                        printf("addition res:%d",a+b);
+                        break;
+                case 2:
+                        printf("subtraction res:%d",a-b);
+                        break;
+                case 3:
+                        printf("multiplication res:%d",a*b);
+                        break;
+                case 4:
+                        printf("division res:%d",a/b);
+                        break;
+                case 5:
+                        printf("modulo res:%d",a%b);
+                        break;
+                default:
+                        printf("invalid choice");
+        }
+        printf("\n finished/n");
+        return 0;
+
+}
+  
