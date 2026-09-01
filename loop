@@ -1,0 +1,327 @@
+#include<stdio.h>
+int main()
+{
+        int N,i=1;
+        printf("enter N");
+        scanf("%d",&N);
+        while(i<=N)
+        {
+                printf("\t%d",i);
+                i=i+1;
+        }
+        printf("\nfinished\n");
+        return 0;
+}
+#include<stdio.h>
+int main()
+{
+        int N,i=1,s=0;
+        printf("enter N");
+        scanf("%d",&N);
+        while(i<=N)
+        {
+                s=s+i;
+                i=i+1;
+        }
+        printf("sum:%d",s);
+        printf("/nfinished\n");
+        return 0;
+}
+#include<stdio.h>
+int main()
+{
+        int N,i,fact=1;
+        printf("enter N");
+        scanf("%d",&N);
+        for(i=1;i<=N;i++)
+        {
+                fact=fact*i;
+        }
+        printf("factorial:%d",fact);
+        printf("\nfinished\n");
+        return 0;
+}
+#include<stdio.h>
+int main()
+{
+        int N,T1=0,T2=1,res,i=1;
+        printf("enter N");
+        scanf("%d",&N);
+        printf("%d%d",T1,T2);
+        while(i<=N)
+        {
+                res=T1+T2;
+                printf("%d",res);
+                T1=T2;
+                T2=res;
+                i=i+1;
+        }
+        printf("\nfinished\n");
+        return 0;
+}
+
+#include<stdio.h>
+int main()
+{
+        int N,rem,c=0;
+        printf("enter N");
+        scanf("%d",&N);
+        while(N>0)
+        {
+                rem=N%10;
+                c=c+1;
+                N=N/10;
+        }
+        printf("number of digits:%d",c);
+        printf("\nfinished\n");
+        return 0;
+}
+#include<stdio.h>
+int main()
+{
+        int N,s=0,rem,c=0;
+        printf("enter N");
+        scanf("%d",&N);
+        while(N>0)
+        {
+                rem=N%10;
+                s=s+rem;
+                c=c+1;
+                N=N/10;
+        }
+        printf("sum of digit:%d",s);
+        printf("\nfinished\n");
+        return 0;
+}
+
+#include<stdio.h>
+int main()
+{
+        int N,s=0,rem,c;
+        printf("enter N");
+        scanf("%d",&N);
+        c=0;
+        while(N>0)
+        {
+                rem=N%10;
+                if(rem%2==0)
+                {
+                        s=s+rem;
+                }
+                N=N/10;
+                c=c+1;
+        }
+        printf("sum of even digits:%d",s);
+        printf("\nfinished\n");
+        return 0;
+}
+
+#include<stdio.h>
+int main()
+{
+   int N,i=1;
+   printf("enter N");
+   scanf("%d",&N);
+   while(i<=N)
+   {
+      printf("%d\t",i);
+      i=i+2;
+    }
+   printf("\n finished");
+   return 0;
+}
+
+#include<stdio.h>
+int main()
+{
+   int N,s=0,i=1;
+   printf("enter N");
+   scanf("%d",&N);
+   while(i<N)
+   {
+
+      if(N%i==0)
+      {
+
+         s=s+i;
+      }
+      i=i+1;
+   }
+   if(N==s)
+   {
+      printf("%d is perfect number",N);
+   }
+   else
+   {
+      printf("%d is not perfect number",N);
+   }
+   printf("\n finished");
+   return 0;
+}
+
+#include<stdio.h>
+int main()
+{
+   int n,i=1;
+   printf("enter n");
+   scanf("%d",&n);
+   for(i=1;i<n;i++)
+   {
+
+      if(n%i==0)
+      {
+        printf("%d\t",i);
+      }
+   }
+   printf("\n finished");
+   return 0;
+}
+
+#include<stdio.h>
+int main()
+{
+   int n,ori,rem,s=0,c=0;
+   printf("enter n:");
+   scanf("%d",&n);
+   ori=n;
+   while(n>0)
+   {
+     rem=n%10;
+     c=c+1;
+     if(c%2!=0)
+     {
+        s=s+rem;
+     }
+     n=n/10;
+   }
+   printf("sum of odd position of digits%d is %d",ori,s);
+   printf("\n finished");
+   return 0;
+}
+
+#include<stdio.h>
+int main()
+{
+   int n,ori,rem,s=0;
+   printf("enter n");
+   scanf("%d",&n);
+   ori=n;
+   while(n>0)
+   {
+      rem=n%10;
+      s=(s*10)+rem;
+      n=n/10;
+      }
+   if(s==ori)
+   {
+      printf("%d is palindrome",ori);
+   }
+   else
+   {
+      printf("%d is not palindrome",ori);
+   }
+   printf("\nfinished");
+   return 0;
+}
+
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+   int n,rem,c=0,s=0,ori;
+   printf("enter n");
+   scanf("%d",&n);
+   ori=n;
+   while(n>0)
+   {
+      rem=n%10;
+      c=c+1;
+      n=n/10;
+   }
+   n=ori;
+   while(n>0)
+   {
+      rem=n%10;
+      s=s+pow(rem,c);
+      n=n/10;
+
+   }
+   if(s==ori)
+   {
+      printf("%d is armstrong number",ori);
+   }
+   else
+   {
+      printf("%d is not armstrong number",ori);
+   }
+   printf("\n finished");
+   return 0;
+}
+
+#include<stdio.h>
+int main()
+{
+   int i=2,n,flag;
+   printf("enter n");
+   scanf("%d",&n);
+   while(i<n)
+   {
+      if(n%i==0)
+      {
+         flag=1;
+         break;
+      }
+      i=i+1;
+   }
+   if(flag==0&&n>1)
+   {
+      printf("%d is prime number",n);
+   }
+   else
+   {
+      printf("%d is not prime number",n);
+   }
+   printf("\nfinished");
+   return 0;
+}
+
+#include<stdio.h>
+int main()
+{
+   int i,j,rows;
+   printf("enter rows");
+   scanf("%d",&rows);
+   for(i=1;i<=rows;i++)
+   {
+      for(j=1;j<=i;j++)
+      {
+         printf("*\t");
+      }
+      printf("\n");
+   }
+   printf("\nfinished");
+   return 0;
+}
+
+#include<stdio.h>
+int main()
+{
+   int i,j,rows;
+   printf("enter rows");
+   scanf("%d",&rows);
+   for(i=1;i<=rows;i++)
+   {
+      for(j=1;j<=i;j++)
+      {
+         printf("%d\t",j);
+      }
+      printf("\n");
+   }
+   printf("\nfinished");
+   return 0;
+}
+
+
+
+
+
