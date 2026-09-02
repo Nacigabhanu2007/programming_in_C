@@ -1,0 +1,63 @@
+#include<stdio.h>
+int main()
+{
+        float M1,M2,M3,M4,M5,S,avg;
+        printf("enter M1,M2,M3,M4,M5");
+        scanf("%f%f%f%f%f",&M1,&M2,&M3,&M4,&M5);
+        S=M1+M2+M3+M4+M5;
+        avg=S/5;
+        printf("avg:%f\n",avg);
+        return 0;
+}
+
+#include<stdio.h>
+int main()
+{
+        float M1,M2,M3,M4,M5,S,Per;
+        printf("enter M1,M2,M3,M4,M5");
+        scanf("%f%f%f%f%f",&M1,&M2,&M3,&M4,&M5);
+        S=M1+M2+M3+M4+M5;
+        printf("\nS:%f",S);
+        Per=(S/500)*100;
+        printf("Per:%f\n",Per);
+        return 0;
+}
+
+#include<stdio.h>
+int main()
+{
+        int sp,cp,profit;
+        printf("enter sp,cp");
+        scanf("%d%d",&sp,&cp);
+        profit=sp-cp;
+        printf("profit:%d\n",profit);
+        return 0;
+}
+
+#include<stdio.h>
+int main()
+{
+        float dollar,rupees;
+        printf("enter dollar");
+        scanf("%f",&dollar);
+        rupees=dollar*87;
+        printf("rupees:%f",rupees);
+        return 0;
+}
+
+#include<stdio.h>
+int main()
+{
+        int sec;
+        float hr,min;
+        printf("enter sec");
+        scanf("%d",&sec);
+        hr=sec/3600;
+        min=sec/60;
+        printf("\n%fhours",hr);
+        printf("\n%fminutes",min);
+        return 0;
+}
+
+
+
