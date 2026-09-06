@@ -1,0 +1,69 @@
+#include<stdio.h>
+#include<string.h>
+struct employee
+{
+   int emp_id;
+   char name[20],desig[30];
+   float basic_pay,hra,da,gross_salary,tax,profit_f,allowance;
+}e;
+int main()
+{
+   struct employee emp;
+   struct employee *e;
+   e=&emp;
+   printf("enter the emp_id:\n");
+   scanf("%d",&e->emp_id);
+   printf("enter the name:\n");
+   scanf("%s",&e->name);
+   printf("enter the basic_pay:\n");
+   scanf("%d",&e->basic_pay);
+   printf("enter the designation:\n");
+   scanf("%s",&e->desig);
+
+   e->gross_salary=e->basic_pay+e->hra+e->da+e->allowance-e->tax-e->profit_f;
+   if(strcmp(e->desig,"manager")==0)
+   {
+      e->hra=0.10*e->basic_pay;
+      e->da=0.5*e->basic_pay;
+      e->tax=0.12*e->basic_pay;
+      e->profit_f=0.5*e->basic_pay;
+      e->allowance=2000.0;
+      e->gross_salary=e->hra+e->da+e->allowance+e->basic_pay+e->allowance-e->tax-e->profit_f;
+      printf("gross_salary:%f\n",e->gross_salary);
+   }
+   else if(strcmp(e->desig,"assistant manager")==0)
+   {
+      e->hra=0.5*e->basic_pay;
+      e->da=0.4*e->basic_pay;
+      e->tax=0.7*e->basic_pay;
+      e->profit_f=0.3*e->basic_pay;
+      e->allowance=1500.0;
+      e->gross_salary=e->hra+e->da+e->basic_pay+e->da+e->allowance-e->tax-e->profit_f;
+      printf("gross_salary:%f\n",e->gross_salary);
+   }
+   else if(strcmp(e->desig,"clerk")==0)
+   {
+      e->hra=0.45*e->basic_pay;
+      e->da=0.36*e->basic_pay;
+      e->tax=0.5*e->basic_pay;
+      e->profit_f=0.2*e->basic_pay;
+      e->allowance=1000.0;
+      e->gross_salary=e->hra+e->da+e->basic_pay+e->allowance-e->tax-e->profit_f;
+      printf("gross_salary:%f\n",e->gross_salary);
+   }
+   else
+   {
+      e->hra=0.35*e->basic_pay;
+      e->da=0.29*e->basic_pay;
+      e->tax=0.3*e->basic_pay;
+      e->profit_f=0.1*e->basic_pay;
+      e->allowance=500.0;
+      e->gross_salary=e->hra+e->da+e->basic_pay+e->allowance-e->tax-e->profit_f;
+      printf("gross_salary:%f\n",e->gross_salary);
+
+   }
+   printf("\nfinished\n");
+   return 0;
+}
+
+
