@@ -1,0 +1,135 @@
+#include<stdio.h>
+#include<string.h>
+struct employee
+{
+   int emp_id;
+   char name[20],desig[30];
+   float basic_pay,hra,da,gross_salary,tax,profit_f,allowance;
+}e;
+int main()
+{
+   struct employee e;
+   printf("enter the emp_id:\n");
+   scanf("%d",&e.emp_id);
+   printf("enter the name:\n");
+   scanf("%s",&e.name);
+   printf("enter the basic_pay:\n");
+   scanf("%d",&e.basic_pay);
+   printf("enter the designation:\n");
+   scanf("%s",&e.desig);
+
+   e.gross_salary=e.basic_pay+e.hra+e.da+e.allowance-e.tax-e.profit_f;
+   if(strcmp(e.desig,"manager")==0)
+   {
+      e.hra=0.10*e.basic_pay;
+      e.da=0.5*e.basic_pay;
+      e.tax=0.12*e.basic_pay;
+      e.profit_f=0.5*e.basic_pay;
+      e.allowance=2000.0;
+      e.gross_salary=e.hra+e.da+e.allowance+e.basic_pay+e.allowance-e.tax-e.profit_f;
+      printf("gross_salary:%f\n",e.gross_salary);
+   }
+   else if(strcmp(e.desig,"assistant manager")==0)
+   {
+      e.hra=0.5*e.basic_pay;
+      e.da=0.4*e.basic_pay;
+      e.tax=0.7*e.basic_pay;
+      e.profit_f=0.3*e.basic_pay;
+      e.allowance=1500.0;
+      e.gross_salary=e.hra+e.da+e.basic_pay+e.da+e.allowance-e.tax-e.profit_f;
+      printf("gross_salary:%f\n",e.gross_salary);
+   }
+   else if(strcmp(e.desig,"clerk")==0)
+   {
+      e.hra=0.45*e.basic_pay;
+      e.da=0.36*e.basic_pay;
+      e.tax=0.5*e.basic_pay;
+      e.profit_f=0.2*e.basic_pay;
+      e.allowance=1000.0;
+      e.gross_salary=e.hra+e.da+e.basic_pay+e.allowance-e.tax-e.profit_f;
+      printf("gross_salary:%f\n",e.gross_salary);
+   }
+   else
+   {
+      e.hra=0.35*e.basic_pay;
+      e.da=0.29*e.basic_pay;
+      e.tax=0.3*e.basic_pay;
+      e.profit_f=0.1*e.basic_pay;
+      e.allowance=500.0;
+      e.gross_salary=e.hra+e.da+e.basic_pay+e.allowance-e.tax-e.profit_f;
+      printf("gross_salary:%f\n",e.gross_salary);
+
+   }
+   printf("\nfinished\n");
+   return 0;
+}
+
+
+
+#include<stdio.h>
+struct employee
+{
+   int emp_id,salary,experience,i;
+   char name[20];
+}e;
+int main()
+{
+   struct employee e[30];
+   int i,n,flag=0,emp_id;
+   printf("enter the no of employee:\n");
+   scanf("%d",&n);
+   for(i=0;i<n;i++)
+   {
+      printf("enter the emp_id:\n");
+      scanf("%d",&e[i].emp_id);
+      printf("enter the name :\n");
+      scanf("%s",&e[i].name);
+      printf("enter the salary:\n");
+      scanf("%d",&e[i].salary);
+      printf("enter experience:\n");
+      scanf("%d",&e[i].experience);
+   }
+   printf("enter the emp_id to be search:\n");
+   scanf("%d",&emp_id);
+   for(i=0;i<n;i++)
+   {
+      if(e[i].emp_id=emp_id)
+      {
+         flag=1;
+         printf("employee id:%d\n",e[i].emp_id);
+         printf("name:%s\n",e[i].name);
+         printf("salary:%d\n",e[i].salary);
+         printf("experience:%d\n",e[i].experience);
+         break;
+      }
+   }
+   if(flag==0)
+   {
+      printf("employee not found\n");
+   }
+   return 0;
+}
+
+
+#include<stdio.h>
+#include<string.h>
+union employee
+{
+   int emp_id,salary,experience;
+   char name[20],desig[20];
+}e;
+int main()
+{
+   union employee e;
+   strcpy(e.name,"brindha");
+   printf("name:%s\n",e.name);
+   e.emp_id=5468;
+   printf("employee id:%d\n",e.emp_id);
+   strcpy(e.desig,"manager");
+   printf("designation:%s\n",e.desig);
+   e.experience=1;
+   printf("experience:%dyear\n",e.experience);
+   e.salary=100;
+   printf("salary:%dK\n",e.salary);
+   return 0;
+}
